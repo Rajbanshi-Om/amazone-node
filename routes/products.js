@@ -80,4 +80,11 @@ router.get("/:id", (req, res) => {
     );
 });
 
+router.post("/upload", (req, res) => {
+  Product.create(req.body)
+  .then((response) => {
+    res.status(200).json({success : true ,response})
+    })
+})
+
 module.exports = router;
